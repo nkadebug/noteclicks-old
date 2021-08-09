@@ -27,13 +27,15 @@ video.onclick = function () {
     // Other browsers will fall back to image/png
     img.src = canvas.toDataURL("image/webp");
     $("#img").show();
+    video.srcObject.getVideoTracks().forEach(track => track.stop());
     $('#video').hide();
     //downloadURI(img.src,Date.now()+'.png');
     
     canvas.toBlob((blob)=>{
         let fileName = moment().format('YYMMDD_hhmmss_SSS')+'.jpeg'
-        storageRef.child('image/'+fileName).put(blob);
-    })
+        //storageRef.child('image/'+fileName).put(blob);
+        alert(blob.size);
+    },'image/jpeg',0.5);
 };
 
 function downloadURI(uri, name) {
