@@ -29,12 +29,16 @@
 
 <body>
   <main>
-    <img id="img" src="" style="width: 100%; height: auto; margin: 5px;" />
-    <input type="file" accept="image/*" capture="camera" id="pic" style="visibility: hidden;" />
-    <input type="button" value="Add" onclick="$('#pic').click();" />
+    <video id="video" autoplay style="width: 100%; height: auto;" ></video>
+    <img id="img" src="" style="width: 100%; height: auto;" />
+    <canvas style="display:none;"></canvas>
+    <!-- <button id="capture">Capture</button> -->
+    <!-- <input type="file" accept="image/*" capture="camera" id="pic" style="visibility: hidden;" />
+    <input type="button" value="Add" onclick="$('#pic').click();" /> -->
   </main>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./main.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script defer src="./main.js"></script>
 </body>
 
 </html>
